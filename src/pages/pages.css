@@ -95,6 +95,7 @@
 #article{
     background-color: green !important;
     height: 88vh;
+    width: 100%;
 }
 #article #post_title{
     background-color: black;
@@ -108,7 +109,7 @@
 
 #article #post_description{
     color: black;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(223, 215, 215);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     padding: 1em;
@@ -116,7 +117,15 @@
     font-size: 1.5rem;
     padding:1em;
     height: 85%;
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
 
+}
+
+#article #post_description p{
+    width: 100%;
 }
 
 .text-container span{

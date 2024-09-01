@@ -25,7 +25,7 @@ export const Post=(props:any)=>{
             </div>
 
             <div id="post_description">
-                {post.description}
+                <p>{post.description}</p>
             </div>
         </div>)
 }

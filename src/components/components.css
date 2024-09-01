@@ -57,3 +57,10 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
+
+@media only screen and (max-width: 700px) {
+    #navbar .link {
+        /* Full width on small screens */
+        font-size:0.85em;  /* Remove border radius for a more edge-to-edge look */
+    }
+}
