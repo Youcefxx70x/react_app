@@ -1,0 +1,56 @@
+form #title{
+    display:block;
+    width:30%;
+    height:1em;
+    padding: 1em 2em;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family:'Courier New', Courier, monospace;
+}
+
+form textarea{
+    display:block;
+    width:30%;
+    height:25em;
+    padding: 1em 2em;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family:'Courier New', Courier, monospace;
+    
+}
+
+form #submit{
+    padding:1em 4em;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: Arial;
+}
+
+form #submit:hover{
+    background-color: black;
+    color: #fff;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+
+form{
+    margin-top:1em
+}
+
+form label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:bold;
+    font-size: 1.25em;
+}
+
+form hr {
+    border: none; /* Remove default border */
+    height: 2px; /* Set height to ensure it’s visible */
+    background: black; /* Set background color */
+    width: 50%; /* Ensure it spans the width of its container */
+    margin: 1em 0; /* Add vertical spacing */
+}

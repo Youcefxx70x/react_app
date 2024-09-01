@@ -1,0 +1,120 @@
+.main{
+    text-align: center;
+}
+
+#login{
+    text-align: center;
+    height: 90vh;
+
+}
+
+#login #login_btn{
+    border-style:none;
+    cursor: pointer;
+    font-weight:500;
+    background-color: rgb(201, 201, 181);
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px 5px #888888;
+}
+
+#login .g-sign-in-button{
+    margin-top:6em;
+
+    height: 50vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+
+
+
+
+}
+
+#login h1{
+    height:5vh;
+    margin-top:1rem;
+}
+
+#login #login_btn img{
+    border-radius: 10px;
+    height: 7em;
+    width: 7em;
+}
+
+
+#login #login_btn:hover{
+    background-color: rgb(252, 252, 232);
+    
+    
+}
+
+.post{
+    width:50%;
+    text-align:center;
+    border: 2px solid;
+    overflow: hidden;
+    border-radius: 1em;
+    margin:0 auto;
+    background-color: beige;
+    cursor: pointer;
+}
+
+
+.post .post_content{
+    border-bottom: 1px solid;
+    padding:1em 2em;
+}
+
+#posts_list{
+    display:flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+#home .link{
+    text-decoration: none;
+    color:black;
+    
+}
+
+#home .post:hover{
+    text-decoration: none;
+    background-color:blanchedalmond;
+    
+}
+#article{
+    background-color: green !important;
+    height: 88vh;
+}
+#article #post_title{
+    background-color: black;
+    color: beige;
+    text-align: center;
+    padding: 1em;
+    height: 15%;
+
+}
+
+
+#article #post_description{
+    color: black;
+    background-color: rgb(255, 255, 255);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    padding: 1em;
+    text-align: left;
+    font-size: 1.5rem;
+    padding:1em;
+    height: 85%;
+
+}
+
+.text-container span{
+    display: inline-block;
+    margin-top: 1em;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(32, 32, 32);
+}
