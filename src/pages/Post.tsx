@@ -1,16 +1,23 @@
 import {getDoc,doc} from 'firebase/firestore'
 import {auth,db} from '../config/firebase'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import './pages.css'
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 export const Post=(props:any)=>{
+    const [user]=useAuthState(auth)
+    const navigate=useNavigate()
+   
     const { id } = useParams<{ id: string }>();
     let postref:any // Get the postId from the URL
     if(id){postref=doc(db,"posts",id)}
     const [post,setPost]=useState<any>({})
 
     async function getter(){
+        if(!user){
+            navigate('/')
+        }
         let data=await getDoc(postref)
         console.log(data.data())
         setPost(data.data())
