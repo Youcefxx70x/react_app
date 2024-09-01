@@ -14,7 +14,6 @@ export const Login=()=>{
     return(
         <div id="login">
 
-            <h1>hello this my login</h1>
 
           
         

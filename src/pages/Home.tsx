@@ -3,7 +3,8 @@ import { auth, db } from '../config/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { getDocs, collection, addDoc,getDoc,doc ,query,where,deleteDoc} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+
 
 interface Post {
     id: string;
@@ -17,8 +18,9 @@ interface Post {
 
 
 export const Home = () => {
+    const navigate=useNavigate()
     const postRef = collection(db, "posts");
-    const [user] = useAuthState(auth);
+    const [user,loading] = useAuthState(auth);
     const [posts, setPosts] = useState<Post[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -42,10 +44,21 @@ export const Home = () => {
 
     const startIndex = (currentPage - 1) * 3;
     const currentPosts = posts.slice(startIndex, startIndex + 3);
+    function check(){
+        
+        if(!user&&!loading){
+            taker()
+            return (<div><h4>Please Login first</h4></div>)
+        }
+        return (<></>)
+    }
+    function taker(){
+        setTimeout(()=>{navigate('/login')},2000)
+    }
 
     return (
         <div id="home">
-            <h1 className="main">Hello this is home page</h1>
+            <h1 className="main">Articles</h1>
             {/* Uncomment these lines if needed */}
             {/* <p>{user?.displayName}</p>
             {user?.photoURL && <img src={user.photoURL} alt="profile" width="100" height="100" />} */}
@@ -58,7 +71,11 @@ export const Home = () => {
                     onPageChange={handlePageChange}
                     user={user}
                 />
-            ):<h4 style={{textAlign:'center'}}>loading....</h4>}
+            ):loading&&<h4 style={{textAlign:'center'}}>loading....</h4>}
+
+            {check()}
+
+            
         </div>
     );
 };
@@ -174,7 +191,7 @@ const PostCollection = (props: {
                     user={user}
                 />
             ))}
-            <div>
+            <div id="toggler">
                 <button
                     onClick={() => onPageChange(currentPage - 1)}
                     disabled={currentPage === 1}
